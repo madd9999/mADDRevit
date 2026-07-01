@@ -1,0 +1,56 @@
+<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Import Section / Detail (2D detailing only)"
+    Height="640" Width="940"
+    WindowStartupLocation="CenterScreen"
+    ShowInTaskbar="False">
+  <Grid Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <TextBlock Grid.Row="0" Margin="0,0,0,8" TextWrapping="Wrap" Foreground="#FF6A4B00">
+      Preview shows the full view. Import brings only the 2D detail elements
+      (lines, regions, components, text) into a new drafting view -- model
+      linework does not transfer.
+    </TextBlock>
+
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="320"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <DockPanel Grid.Column="0" Margin="0,0,10,0">
+        <TextBlock DockPanel.Dock="Top" Text="Sections &amp; Detail Callouts (Ctrl/Shift to multi-select)"
+                   FontWeight="Bold" Margin="0,0,0,6" TextWrapping="Wrap"/>
+        <ListBox x:Name="view_list" SelectionMode="Extended"
+                 SelectionChanged="on_selection_changed"/>
+      </DockPanel>
+
+      <Border Grid.Column="1" BorderBrush="#FFB9B9B9" BorderThickness="1" Background="#FFF6F6F6">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <TextBlock x:Name="preview_label" Grid.Row="0"
+                     Text="Select a view to preview"
+                     Margin="10" FontStyle="Italic" TextWrapping="Wrap"/>
+          <Image x:Name="preview_image" Grid.Row="1" Margin="10" Stretch="Uniform"/>
+        </Grid>
+      </Border>
+    </Grid>
+
+    <StackPanel Grid.Row="2" Orientation="Horizontal"
+                HorizontalAlignment="Right" Margin="0,10,0,0">
+      <Button x:Name="import_button" Content="Import" Width="110" Height="30"
+              Margin="0,0,8,0" Click="on_import"/>
+      <Button x:Name="cancel_button" Content="Cancel" Width="110" Height="30"
+              Click="on_cancel"/>
+    </StackPanel>
+  </Grid>
+</Window>

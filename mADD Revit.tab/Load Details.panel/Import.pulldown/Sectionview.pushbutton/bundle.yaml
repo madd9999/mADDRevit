@@ -1,0 +1,3 @@
+title: Import Section / Detail
+tooltip: Copy only the 2D detail elements from wall sections and detail callouts in the saved library .RVT into new drafting views. Model linework is excluded.
+min_revit_ver: 2017

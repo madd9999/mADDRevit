@@ -1,0 +1,60 @@
+<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Import Family from Library"
+    Height="660" Width="960"
+    WindowStartupLocation="CenterScreen"
+    ShowInTaskbar="False">
+  <Grid Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <!-- search -->
+    <DockPanel Grid.Row="0" Margin="0,0,0,8">
+      <TextBlock DockPanel.Dock="Left" Text="Search:" VerticalAlignment="Center"
+                 Margin="0,0,6,0" FontWeight="Bold"/>
+      <TextBox x:Name="search_box" Height="26" VerticalContentAlignment="Center"
+               TextChanged="on_search"/>
+    </DockPanel>
+
+    <!-- tree + preview -->
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="380"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <TreeView x:Name="tree" Grid.Column="0" Margin="0,0,10,0"
+                SelectedItemChanged="on_tree_select"/>
+
+      <Border Grid.Column="1" BorderBrush="#FFB9B9B9" BorderThickness="1"
+              Background="#FFF6F6F6">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <TextBlock x:Name="preview_label" Grid.Row="0"
+                     Text="Select a family to preview"
+                     Margin="10" FontStyle="Italic" TextWrapping="Wrap"/>
+          <Image x:Name="preview_image" Grid.Row="1" Margin="10" Stretch="Uniform"/>
+        </Grid>
+      </Border>
+    </Grid>
+
+    <TextBlock x:Name="status_text" Grid.Row="2" Margin="2,6,0,0"
+               Foreground="#FF555555"/>
+
+    <StackPanel Grid.Row="3" Orientation="Horizontal"
+                HorizontalAlignment="Right" Margin="0,10,0,0">
+      <Button x:Name="import_button" Content="Import Checked" Width="130" Height="30"
+              Margin="0,0,8,0" Click="on_import"/>
+      <Button x:Name="cancel_button" Content="Cancel" Width="110" Height="30"
+              Click="on_cancel"/>
+    </StackPanel>
+  </Grid>
+</Window>

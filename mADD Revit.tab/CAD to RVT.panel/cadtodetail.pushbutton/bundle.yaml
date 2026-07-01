@@ -1,0 +1,3 @@
+title: CAD to Detail
+tooltip: Convert a CAD file into clean NATIVE Revit detail lines in a new drafting view, without polluting the model. Linework only (no text/hatch).
+min_revit_ver: 2017

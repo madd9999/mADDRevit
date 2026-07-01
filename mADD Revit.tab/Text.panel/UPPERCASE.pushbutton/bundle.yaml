@@ -1,0 +1,4 @@
+title: UPPERCASE
+tooltip: >
+  Converts TextNote annotations in the active view or active sheet to uppercase.
+  On sheets, you can include sheet annotations only or also include views placed on the sheet.
