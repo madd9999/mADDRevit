@@ -1,0 +1,54 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Text Organizer" Width="360" SizeToContent="Height"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.Row="0" Header="Alignment" Margin="0,0,0,8">
+            <StackPanel Margin="6">
+                <RadioButton x:Name="rbAlignLeft"   Content="Align Left"   GroupName="align" IsChecked="True" Margin="0,2"/>
+                <RadioButton x:Name="rbAlignRight"  Content="Align Right"  GroupName="align" Margin="0,2"/>
+                <RadioButton x:Name="rbAlignCenter" Content="Align Center" GroupName="align" Margin="0,2"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Header="Spacing" Margin="0,0,0,8">
+            <StackPanel Margin="6">
+                <CheckBox x:Name="chkAutoSpace" Content="Auto Space Notes Vertically (equal grid)" IsChecked="False" Margin="0,2"/>
+                <CheckBox x:Name="chkPreventOverlap" Content="Prevent Text Overlap" IsChecked="True" Margin="0,2"/>
+                <CheckBox x:Name="chkMaintainLeaders" Content="Maintain Leader Connections" IsChecked="True" IsEnabled="False" Margin="0,2"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Header="Text Formatting" Margin="0,0,0,8">
+            <StackPanel Margin="6">
+                <RadioButton x:Name="rbFmtNone"     Content="No Change"     GroupName="fmt" Margin="0,2"/>
+                <RadioButton x:Name="rbFmtCaps"     Content="ALL CAPS"      GroupName="fmt" IsChecked="True" Margin="0,2"/>
+                <RadioButton x:Name="rbFmtLower"    Content="lowercase"     GroupName="fmt" Margin="0,2"/>
+                <RadioButton x:Name="rbFmtTitle"    Content="Title Case"    GroupName="fmt" Margin="0,2"/>
+                <RadioButton x:Name="rbFmtSentence" Content="Sentence Case" GroupName="fmt" Margin="0,2"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="3" Header="Scope" Margin="0,0,0,8">
+            <StackPanel Margin="6">
+                <RadioButton x:Name="rbScopeAll"   Content="Entire Active View" GroupName="scope" IsChecked="True" Margin="0,2"/>
+                <RadioButton x:Name="rbScopeLeft"  Content="Left Side Only"     GroupName="scope" Margin="0,2"/>
+                <RadioButton x:Name="rbScopeRight" Content="Right Side Only"    GroupName="scope" Margin="0,2"/>
+            </StackPanel>
+        </GroupBox>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnCancel" Content="Cancel" Width="80" Height="26" Margin="0,0,8,0" Click="btnCancel_Click"/>
+            <Button x:Name="btnApply"  Content="Apply"  Width="80" Height="26" Click="btnApply_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
