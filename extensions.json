@@ -1,0 +1,58 @@
+{
+    "extensions": [
+        {
+            "name": "mADD1Intro",
+            "description": "mADD Intro tools",
+            "author": "madd9999",
+            "url": "https://github.com/madd9999/mADDRevit.git",
+            "website": "https://github.com/madd9999/mADDRevit",
+            "type": "extension",
+            "rocket_mode_compatible": "True"
+        },
+        {
+            "name": "mADDCad",
+            "description": "CAD to Revit tools",
+            "author": "madd9999",
+            "url": "https://github.com/madd9999/mADDRevit.git",
+            "website": "https://github.com/madd9999/mADDRevit",
+            "type": "extension",
+            "rocket_mode_compatible": "True"
+        },
+        {
+            "name": "mADDDetail",
+            "description": "Detail library tools",
+            "author": "madd9999",
+            "url": "https://github.com/madd9999/mADDRevit.git",
+            "website": "https://github.com/madd9999/mADDRevit",
+            "type": "extension",
+            "rocket_mode_compatible": "True"
+        },
+        {
+            "name": "mADDRevit",
+            "description": "Core mADD Revit tools",
+            "author": "madd9999",
+            "url": "https://github.com/madd9999/mADDRevit.git",
+            "website": "https://github.com/madd9999/mADDRevit",
+            "type": "extension",
+            "rocket_mode_compatible": "True"
+        },
+        {
+            "name": "mADDViews",
+            "description": "Views tools",
+            "author": "madd9999",
+            "url": "https://github.com/madd9999/mADDRevit.git",
+            "website": "https://github.com/madd9999/mADDRevit",
+            "type": "extension",
+            "rocket_mode_compatible": "True"
+        },
+        {
+            "name": "mADDWarning",
+            "description": "Warning tools",
+            "author": "madd9999",
+            "url": "https://github.com/madd9999/mADDRevit.git",
+            "website": "https://github.com/madd9999/mADDRevit",
+            "type": "extension",
+            "rocket_mode_compatible": "True"
+        }
+    ]
+}
