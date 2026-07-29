@@ -1,3 +1,0 @@
-title: "Dynamo \nScripts"
-tooltip: Store a list of Dynamo graphs and run the selected one. Use "+ Add" to register a new .dyn file.
-min_revit_ver: 2017
