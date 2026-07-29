@@ -1,0 +1,80 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Model Warnings" Width="1200" Height="650"
+        WindowStartupLocation="CenterScreen">
+    <DockPanel Margin="10">
+        <TextBlock x:Name="txtSummary" DockPanel.Dock="Top" FontWeight="Bold"
+                   FontSize="14" Margin="0,0,0,8"/>
+
+        <Grid DockPanel.Dock="Bottom" Margin="0,8,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="txtHint" Grid.Column="0" VerticalAlignment="Center"
+                       Foreground="Gray" FontStyle="Italic"
+                       Text="Click a warning type, then an element, to preview where it is."/>
+            <Button x:Name="btnClose" Grid.Column="1" Content="Close" Width="90"
+                    Height="26" Click="btnClose_Click"/>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="330"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <DockPanel Grid.Column="0">
+                <TextBlock DockPanel.Dock="Top" Text="Warning Types" FontWeight="Bold" Margin="0,0,0,4"/>
+                <StackPanel DockPanel.Dock="Top" Margin="0,0,0,6">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                        <TextBlock Text="●" Foreground="#D32F2F" FontWeight="Bold" Margin="0,0,3,0"/>
+                        <TextBlock Text="Critical  " FontSize="11" Foreground="Gray"/>
+                        <TextBlock Text="●" Foreground="#F57C00" FontWeight="Bold" Margin="6,0,3,0"/>
+                        <TextBlock Text="Moderate  " FontSize="11" Foreground="Gray"/>
+                        <TextBlock Text="●" Foreground="#757575" FontWeight="Bold" Margin="6,0,3,0"/>
+                        <TextBlock Text="Info" FontSize="11" Foreground="Gray"/>
+                    </StackPanel>
+                    <CheckBox x:Name="chkHideReviewed" Content="Hide reviewed warning types"
+                              Checked="chkHideReviewed_Changed" Unchecked="chkHideReviewed_Changed"/>
+                </StackPanel>
+                <ListBox x:Name="lstGroups" SelectionChanged="lstGroups_SelectionChanged"
+                         FontSize="12"/>
+            </DockPanel>
+
+            <GridSplitter Grid.Column="1" Width="8" HorizontalAlignment="Stretch" Background="#DDD"/>
+
+            <DockPanel Grid.Column="2">
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,4">
+                    <TextBlock Text="Elements" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <Button x:Name="btnSelectAll" Content="Select All" Margin="12,0,0,0"
+                            Height="24" Click="btnSelectAll_Click"/>
+                    <Button x:Name="btnExport" Content="Export CSV" Margin="6,0,0,0"
+                            Height="24" Click="btnExport_Click"/>
+                </StackPanel>
+                <ListBox x:Name="lstElements" FontSize="12"
+                         SelectionChanged="lstElements_SelectionChanged"/>
+            </DockPanel>
+
+            <GridSplitter Grid.Column="3" Width="8" HorizontalAlignment="Stretch" Background="#DDD"/>
+
+            <DockPanel Grid.Column="4">
+                <TextBlock x:Name="txtPreviewCaption" DockPanel.Dock="Top" FontWeight="Bold"
+                           Margin="0,0,0,4" TextWrapping="Wrap"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" Background="White">
+                    <Grid>
+                        <TextBlock x:Name="txtPreviewStatus" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" Foreground="Gray"
+                                   Text="Pick a warning, then an element, to see a preview here."
+                                   TextWrapping="Wrap" MaxWidth="260"/>
+                        <Image x:Name="imgPreview" Stretch="Uniform" Margin="4"/>
+                    </Grid>
+                </Border>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>
+

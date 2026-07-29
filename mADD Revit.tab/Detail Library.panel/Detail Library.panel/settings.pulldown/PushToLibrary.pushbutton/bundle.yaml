@@ -1,0 +1,3 @@
+title: Push to Library
+tooltip: Save a drafting view from this project into the shared Detail Library as its own small, versioned .rvt file.
+min_revit_ver: 2017
